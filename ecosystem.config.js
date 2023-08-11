@@ -1,11 +1,10 @@
 module.exports = {
   apps: [
     {
-      name: 'NuxtAppName',
+      name: 'senabung-client',
       exec_mode: 'cluster',
-      instances: '1', // Or a number of instances
-      script: './node_modules/nuxt/bin/nuxt.js',
-      args: 'start',
+      instances: 'max', // Or a number of instances
+      script: './.output/server/index.mjs',
     },
   ],
 }
