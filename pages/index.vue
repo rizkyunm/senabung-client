@@ -7,9 +7,12 @@ definePageMeta({ auth: false })
 
 let campaigns = reactive<ICampaign[]>([])
 
+const isLoaded = ref<boolean>(false)
+
 onMounted(async () => {
   try {
     campaigns = await $api.campaign.highlight()
+    isLoaded.value = true
   } catch (error) {
     console.error(error)
   }
@@ -43,7 +46,12 @@ onMounted(async () => {
         </button>
       </div>
     </section>
-    <section v-if="campaigns" class="container mx-auto pt-20">
+    <section v-if="!isLoaded" class="container mx-auto relative">
+      <div class="flex justify-center mt-3 h-96">
+        <span class="loading loading-spinner loading-lg align-middle"></span>
+      </div>
+    </section>
+    <section v-if="campaigns && isLoaded" class="container mx-auto pt-20">
       <div class="flex justify-between items-center">
         <div class="w-auto">
           <h2 class="text-3xl font-bold text-teal-800 mb-8">

@@ -9,13 +9,13 @@ const client_manifest = {
     "file": "Footer.29de2a28.css",
     "src": "Footer.css"
   },
-  "_ErrorModal.ea94ea53.js": {
+  "_ErrorModal.85fa5f97.js": {
     "resourceType": "script",
     "module": true,
     "css": [
       "ErrorModal.faac38c8.css"
     ],
-    "file": "ErrorModal.ea94ea53.js",
+    "file": "ErrorModal.85fa5f97.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -24,15 +24,15 @@ const client_manifest = {
     "file": "ErrorModal.faac38c8.css",
     "resourceType": "style"
   },
-  "_Footer.2e10e491.js": {
+  "_Footer.cc62e973.js": {
     "resourceType": "script",
     "module": true,
     "css": [
       "Footer.29de2a28.css"
     ],
-    "file": "Footer.2e10e491.js",
+    "file": "Footer.cc62e973.js",
     "imports": [
-      "_nuxt-link.c905d1b8.js",
+      "_nuxt-link.19ed2f35.js",
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
@@ -45,26 +45,26 @@ const client_manifest = {
     "module": true,
     "file": "date.044cb15a.js"
   },
-  "_funded-illustration.52f8578c.js": {
+  "_funded-illustration.ea35f2fb.js": {
     "resourceType": "script",
     "module": true,
-    "file": "funded-illustration.52f8578c.js",
+    "file": "funded-illustration.ea35f2fb.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_icon-avatar-add.91797494.js": {
+  "_icon-avatar-add.391090ef.js": {
     "resourceType": "script",
     "module": true,
-    "file": "icon-avatar-add.91797494.js",
+    "file": "icon-avatar-add.391090ef.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_nuxt-link.c905d1b8.js": {
+  "_nuxt-link.19ed2f35.js": {
     "resourceType": "script",
     "module": true,
-    "file": "nuxt-link.c905d1b8.js",
+    "file": "nuxt-link.19ed2f35.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -72,7 +72,7 @@ const client_manifest = {
   "layouts/auth.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "auth.3a4d03de.js",
+    "file": "auth.14f9d31e.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -82,7 +82,7 @@ const client_manifest = {
   "layouts/success.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "success.0421bc38.js",
+    "file": "success.7541cfcc.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -105,7 +105,7 @@ const client_manifest = {
       "layouts/success.vue",
       "virtual:nuxt:/Users/rizkyachmadsyah/go/src/senabung/senabung-client/.nuxt/error-component.mjs"
     ],
-    "file": "entry.2edbd4e8.js",
+    "file": "entry.3e678935.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js"
   },
@@ -116,7 +116,7 @@ const client_manifest = {
   "pages/daftar-sukses.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "daftar-sukses.67aa543b.js",
+    "file": "daftar-sukses.079ac75f.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -134,11 +134,11 @@ const client_manifest = {
     "css": [
       "daftar.d5ab62b2.css"
     ],
-    "file": "daftar.fdef357d.js",
+    "file": "daftar.d43b3db0.js",
     "imports": [
-      "_nuxt-link.c905d1b8.js",
+      "_nuxt-link.19ed2f35.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_ErrorModal.ea94ea53.js"
+      "_ErrorModal.85fa5f97.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/daftar.vue"
@@ -150,12 +150,12 @@ const client_manifest = {
   "pages/dashboard/profil.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "profil.2d61f91c.js",
+    "file": "profil.49dbfe17.js",
     "imports": [
-      "_Footer.2e10e491.js",
+      "_Footer.cc62e973.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_icon-avatar-add.91797494.js",
-      "_nuxt-link.c905d1b8.js"
+      "_icon-avatar-add.391090ef.js",
+      "_nuxt-link.19ed2f35.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/dashboard/profil.vue"
@@ -163,10 +163,10 @@ const client_manifest = {
   "pages/dashboard/transaksi.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "transaksi.412b13b2.js",
+    "file": "transaksi.04d3f072.js",
     "imports": [
-      "_Footer.2e10e491.js",
-      "_nuxt-link.c905d1b8.js",
+      "_Footer.cc62e973.js",
+      "_nuxt-link.19ed2f35.js",
       "node_modules/nuxt/dist/app/entry.js",
       "_date.044cb15a.js"
     ],
@@ -176,13 +176,13 @@ const client_manifest = {
   "pages/donasi/[slug].vue": {
     "resourceType": "script",
     "module": true,
-    "file": "_slug_.0c7e5956.js",
+    "file": "_slug_.eec8a2ce.js",
     "imports": [
-      "_Footer.2e10e491.js",
-      "_ErrorModal.ea94ea53.js",
+      "_Footer.cc62e973.js",
+      "_ErrorModal.85fa5f97.js",
       "node_modules/nuxt/dist/app/entry.js",
       "_date.044cb15a.js",
-      "_nuxt-link.c905d1b8.js"
+      "_nuxt-link.19ed2f35.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/donasi/[slug].vue"
@@ -190,10 +190,10 @@ const client_manifest = {
   "pages/donasi/index.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "index.2d5cc298.js",
+    "file": "index.4a899c0d.js",
     "imports": [
-      "_Footer.2e10e491.js",
-      "_nuxt-link.c905d1b8.js",
+      "_Footer.cc62e973.js",
+      "_nuxt-link.19ed2f35.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -202,10 +202,10 @@ const client_manifest = {
   "pages/galang-dana.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "galang-dana.4f3573b7.js",
+    "file": "galang-dana.f0c57a49.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_funded-illustration.52f8578c.js"
+      "_funded-illustration.ea35f2fb.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/galang-dana.vue"
@@ -213,11 +213,11 @@ const client_manifest = {
   "pages/index.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "index.6a213776.js",
+    "file": "index.1a17a628.js",
     "imports": [
-      "_Footer.2e10e491.js",
+      "_Footer.cc62e973.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_nuxt-link.c905d1b8.js"
+      "_nuxt-link.19ed2f35.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/index.vue"
@@ -233,11 +233,11 @@ const client_manifest = {
     "css": [
       "masuk.276d0ce2.css"
     ],
-    "file": "masuk.32424436.js",
+    "file": "masuk.e55e052e.js",
     "imports": [
-      "_nuxt-link.c905d1b8.js",
+      "_nuxt-link.19ed2f35.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_ErrorModal.ea94ea53.js"
+      "_ErrorModal.85fa5f97.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/masuk.vue"
@@ -249,11 +249,11 @@ const client_manifest = {
   "pages/tentang-kami.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "tentang-kami.58542a96.js",
+    "file": "tentang-kami.ccc8eefc.js",
     "imports": [
-      "_Footer.2e10e491.js",
+      "_Footer.cc62e973.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_nuxt-link.c905d1b8.js"
+      "_nuxt-link.19ed2f35.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/tentang-kami.vue"
@@ -261,7 +261,7 @@ const client_manifest = {
   "pages/transaksi/gagal.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "gagal.3da17d96.js",
+    "file": "gagal.a39170d1.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -271,7 +271,7 @@ const client_manifest = {
   "pages/transaksi/sukses.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "sukses.628d0961.js",
+    "file": "sukses.826e3168.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -281,10 +281,10 @@ const client_manifest = {
   "pages/transaksi/unfinish.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "unfinish.4960d8d2.js",
+    "file": "unfinish.19f91e70.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_funded-illustration.52f8578c.js"
+      "_funded-illustration.ea35f2fb.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/transaksi/unfinish.vue"
@@ -292,11 +292,11 @@ const client_manifest = {
   "pages/unggah.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "unggah.21309438.js",
+    "file": "unggah.32d5a304.js",
     "imports": [
-      "_ErrorModal.ea94ea53.js",
+      "_ErrorModal.85fa5f97.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_icon-avatar-add.91797494.js"
+      "_icon-avatar-add.391090ef.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/unggah.vue"
@@ -304,7 +304,7 @@ const client_manifest = {
   "virtual:nuxt:/Users/rizkyachmadsyah/go/src/senabung/senabung-client/.nuxt/error-component.mjs": {
     "resourceType": "script",
     "module": true,
-    "file": "error-component.5cb2fe9e.js",
+    "file": "error-component.84a1d67d.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
