@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { definePageMeta } from '#imports'
+
 const { token, data } = useAuth()
 const router = useRouter()
 const { $api } = useNuxtApp()

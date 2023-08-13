@@ -34,7 +34,7 @@ const submit = async () => {
   try {
     await signIn(
       { email: form.email, password: form.password },
-      { callbackUrl: callback.value}
+      { callbackUrl: callback?.value }
     )
   } catch (e) {
     console.log(e)
@@ -124,7 +124,7 @@ const showModal = ref(false)
           <h3 class="font-bold text-lg text-rose-800">Gagal Masuk !</h3>
         </template>
         <template #body>
-          <p class="py-4">{{ errorResponse }}</p>
+          <p class="py-4">{{ errorRespoxxnse }}</p>
         </template>
       </ErrorModal>
     </Teleport>

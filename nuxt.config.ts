@@ -61,7 +61,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@sidebase/nuxt-auth',
     '@pinia/nuxt',
-    // '@sidebase/nuxt-session',
     [
       '@vee-validate/nuxt',
       {
