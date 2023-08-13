@@ -2,8 +2,10 @@
 import { definePageMeta } from '#imports'
 
 definePageMeta({
-  authenticatedOnly: true,
-  navigateUnauthenticatedTo: '/masuk',
+  auth: {
+    authenticatedOnly: true,
+    navigateUnauthenticatedTo: '/masuk',
+  },
 })
 </script>
 

@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { definePageMeta } from '#imports'
+
+definePageMeta({
+  auth: {
+    authenticatedOnly: true,
+    navigateUnauthenticatedTo: '/masuk',
+  },
+})
+</script>
+
 <template>
   <nuxt-layout name="success">
     <div class="container mx-auto h-screen flex justify-center items-center">

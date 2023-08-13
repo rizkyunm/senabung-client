@@ -3,7 +3,12 @@ import { definePageMeta, useAuth } from '#imports'
 
 const { data } = useAuth()
 
-definePageMeta({ authenticatedOnly: true, navigateUnauthenticatedTo: '/masuk' })
+definePageMeta({
+  auth: {
+    authenticatedOnly: true,
+    navigateUnauthenticatedTo: '/masuk',
+  },
+})
 
 const editable = ref<boolean>(false)
 const file = ref(null)

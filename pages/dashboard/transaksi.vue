@@ -7,8 +7,10 @@ const { token } = useAuth()
 const { $api } = useNuxtApp()
 
 definePageMeta({
-  authenticatedOnly: true,
-  navigateUnauthenticatedTo: '/masuk',
+  auth: {
+    authenticatedOnly: true,
+    navigateUnauthenticatedTo: '/masuk',
+  },
 })
 
 let transactions = reactive<ITransaction[]>([])
