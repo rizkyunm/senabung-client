@@ -3,6 +3,7 @@ import { definePageMeta, useAuth } from '#imports'
 import { Field, Form } from 'vee-validate'
 import ErrorModal from '~/components/ErrorModal.vue'
 
+const route = useRoute()
 const { signIn } = useAuth()
 
 definePageMeta({
@@ -23,14 +24,20 @@ const schema = {
 }
 
 const errorResponse = ref<string>('')
+const callback = ref<string>('/')
+
+if (route.query?.callbackUrl) {
+  callback.value = route.query.callbackUrl
+}
 
 const submit = async () => {
   try {
     await signIn(
       { email: form.email, password: form.password },
-      { callbackUrl: '/' }
+      { callbackUrl: callback.value}
     )
   } catch (e) {
+    console.log(e)
     errorResponse.value = 'Periksa kembali email dan password anda'
     showModal.value = true
   }

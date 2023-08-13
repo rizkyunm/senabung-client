@@ -1,3 +1,7 @@
+<script setup lang="ts">
+definePageMeta({ auth: false })
+</script>
+
 <template>
   <div class="landing-page">
     <section class="landing-hero bg-green-progress py-5">

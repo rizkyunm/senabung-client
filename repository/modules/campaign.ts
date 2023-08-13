@@ -23,10 +23,24 @@ class CampaignModule extends HttpFactory {
     return await this.call<ICampaign[]>('GET', `${this.RESOURCE}/campaigns`)
   }
 
+  async highlight(): Promise<ICampaign> {
+    return await this.call<ICampaign>(
+      'GET',
+      `${this.RESOURCE}/campaigns/highlight`
+    )
+  }
+
   async get(id: string): Promise<ICampaignDetail> {
     return await this.call<ICampaignDetail>(
       'GET',
       `${this.RESOURCE}/campaigns/${id}`
+    )
+  }
+
+  async getBySlug(slug: string): Promise<ICampaignDetail> {
+    return await this.call<ICampaignDetail>(
+      'GET',
+      `${this.RESOURCE}/campaigns/slug/${slug}`
     )
   }
 }

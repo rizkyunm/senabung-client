@@ -33,8 +33,17 @@ const schema = {
 
 const userRegister = async () => {
   try {
-    let response = await $api.auth.create(form)
-    console.log(response)
+    const resEmail = await $api.auth.checkEmailAvailability(form.email)
+    if (resEmail.is_available) {
+      await $api.auth.create(form)
+      await signIn(
+        { email: form.email, password: form.password },
+        { callbackUrl: '/unggah' }
+      )
+    } else {
+      errorResponse.value = 'Email sudah terdaftar'
+      showModal.value = true
+    }
   } catch (error) {
     errorResponse.value = 'Terjadi kesalahan saat pendaftaran akun'
     showModal.value = true
@@ -82,7 +91,7 @@ const showModal = ref<boolean>(false)
             </div>
           </div>
           <div class="mb-6 w-full">
-            <div class="mb-4 w-1/2 inline-block">
+            <div class="mb-4 lg:w-1/2 lg:inline-block">
               <label class="font-normal text-lg text-white block mb-3"
                 >Email</label
               >
@@ -96,7 +105,7 @@ const showModal = ref<boolean>(false)
               />
               <span class="text-rose-500 ml-5">{{ errors.email }}</span>
             </div>
-            <div class="mb-4 pl-5 w-1/2 inline-block">
+            <div class="mb-4 lg:pl-5 lg:w-1/2 lg:inline-block">
               <label class="font-normal text-lg text-white block mb-3"
                 >Nomor Handphone</label
               >
@@ -108,11 +117,13 @@ const showModal = ref<boolean>(false)
                 class="register-form focus:outline-none focus:bg-orange-200 focus:shadow-outline focus:border-orange-button-hover focus:text-green-progress"
                 placeholder="Masukkan nomor telepon anda"
               />
-              <span class="text-rose-500 text-sm ml-5">{{ errors.phone_number }}</span>
+              <span class="text-rose-500 text-sm ml-5">{{
+                errors.phone_number
+              }}</span>
             </div>
           </div>
           <div class="mb-6 w-full">
-            <div class="mb-4 w-1/2 inline-block">
+            <div class="mb-4 lg:w-1/2 lg:inline-block">
               <label class="font-normal text-lg text-white block mb-3"
                 >Password</label
               >
@@ -124,11 +135,13 @@ const showModal = ref<boolean>(false)
                 class="register-form focus:outline-none focus:bg-orange-200 focus:shadow-outline focus:border-orange-button-hover focus:text-green-progress"
                 placeholder="Masukkan password anda"
               />
-              <span class="text-rose-500 text-sm ml-5">{{ errors.password }}</span>
+              <span class="text-rose-500 text-sm ml-5">{{
+                errors.password
+              }}</span>
             </div>
-            <div class="mb-4 pl-5 w-1/2 inline-block">
+            <div class="mb-4 lg:pl-5 lg:w-1/2 lg:inline-block">
               <label class="font-normal text-lg text-white block mb-3"
-                >Confirmation Password</label
+                >Konfirmasi Password</label
               >
               <Field
                 v-model="confirmation_password"

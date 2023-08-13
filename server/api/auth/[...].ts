@@ -34,16 +34,15 @@ router.get(
   defineEventHandler(async (event) => {
     const token = event.req.headers?.authorization
 
-    console.log(token)
     if (!token) {
       throw new Error()
     }
 
     try {
       const session = await authModule.session(token)
-      console.log(session)
       return session
     } catch (error) {
+      console.log(error)
       showError({
         statusCode: 403,
         statusMessage:

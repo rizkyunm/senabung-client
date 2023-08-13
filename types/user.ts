@@ -6,3 +6,11 @@ export interface IUser {
   image_url?: string
   role: string
 }
+
+export interface IUploadStatus {
+  is_uploaded: boolean
+}
+
+export interface IAvailability {
+  is_available: boolean
+}

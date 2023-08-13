@@ -5,7 +5,7 @@ import {
   ILoginInput,
   ILoginResponse,
 } from 'types/auth'
-import { IUser } from 'types/user'
+import { IAvailability, IUser } from 'types/user'
 import { IErrors } from 'types/errors'
 
 class AuthModule extends HttpFactory {
@@ -33,6 +33,15 @@ class AuthModule extends HttpFactory {
         Authorization: token,
       },
     })
+  }
+
+  async checkEmailAvailability(email: string): Promise<IAvailability> {
+    console.log(email)
+    return await this.call<IAvailability>(
+      'POST',
+      `${this.RESOURCE}/email_checkers`,
+      { email }
+    )
   }
 }
 

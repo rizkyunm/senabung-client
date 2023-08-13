@@ -33,13 +33,12 @@ body {
   background-repeat: no-repeat;
   background-color: #00695C;
   background-size: 250px;
-  height: 350px;
+  height: 100px;
 }
 
 .dashboard-header {
   background-position: top right;
   background-repeat: no-repeat;
-  background-color: #fcd12a;
   background-size: 250px;
   height: 100px;
 }

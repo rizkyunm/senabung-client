@@ -23,22 +23,22 @@ class HttpFactory {
       })
       .catch((error) => {
         if (error instanceof FetchError) {
-          if (error.data.meta.code === 404) {
+          if (error.data?.meta.code === 404) {
             showError({
               statusCode: 404,
-              message: error.data.meta.message,
+              message: error.data?.meta.message,
               fatal: true,
             })
           }
 
-          if (error.data.meta.code === 403) {
+          if (error.data?.meta.code === 403) {
             showError({
               statusCode: 403,
-              statusMessage: error.data.meta.message,
+              statusMessage: error.data?.meta.message,
             })
           }
 
-          return error.data.data
+          return error.data?.data
         }
         showError({
           statusCode: 500,

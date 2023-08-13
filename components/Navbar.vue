@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { status, data, signOut } = useAuth()
+</script>
+
 <template>
   <header class="flex items-center inline-block">
     <div style="height: 54px" class="pr-5">
@@ -17,7 +21,7 @@
         <nuxt-link
           class="text-white hover:text-orange-button font-semibold text-lg px-4 py-3"
           to="/galang-dana"
-          >Galang Dana</nuxt-link
+        >Galang Dana</nuxt-link
         >
       </li>
       <li>
@@ -28,13 +32,18 @@
         >
       </li>
     </ul>
-    <div v-if="false" class="flex ml-auto">
+    <div v-if="status === 'authenticated'" class="flex ml-auto">
       <div class="dropdown inline-block relative z-10">
         <button
-          class="bg-white text-gray-700 font-semibold py-4 px-6 rounded inline-flex items-center"
+          class="bg-orange-button bg-opacity-80 text-white font-bold py-4 px-6 rounded inline-flex items-center"
         >
-          <img alt="" class="h-8 rounded-full mr-2" />
-          <span class="mr-1">name</span>
+          <img
+            v-if="data.image_url"
+            :src="data.image_url"
+            alt=""
+            class="h-8 rounded-full mr-2"
+          />
+          <span class="mr-1">{{ data.name }}</span>
           <svg
             class="fill-current h-4 w-4"
             xmlns="http://www.w3.org/2000/svg"
@@ -50,23 +59,23 @@
         >
           <li class="">
             <nuxt-link
-              class="bg-white hover:bg-gray-100 hover:text-orange-500 py-2 px-4 block whitespace-no-wrap"
-              to="/dashboard"
-              >My Dashboard</nuxt-link
+              class="bg-gray-100 hover:bg-orange-hover hover:text-white hover:text-orange-500 py-2 px-4 block whitespace-no-wrap"
+              to="/dashboard/transaksi"
+              >Transaksi Saya</nuxt-link
             >
           </li>
           <li class="">
             <nuxt-link
-              class="bg-orange-button hover:bg-orange-hover text-white border-t py-2 px-4 block whitespace-no-wrap"
-              to="/dashboard"
-              >Account Settings</nuxt-link
+              class="bg-gray-100 hover:bg-orange-hover hover:text-white border-t py-2 px-4 block whitespace-no-wrap"
+              to="/dashboard/profil"
+              >Profil Saya</nuxt-link
             >
           </li>
           <li class="">
-            <a
-              class="cursor-pointer rounded-b bg-orange-button hover:bg-orange-hover text-white border-t py-2 px-4 block whitespace-no-wrap"
-              >Logout</a
-            >
+            <nuxt-link
+              class="cursor-pointer rounded-b bg-gray-100 hover:bg-orange-hover hover:text-white border-t py-2 px-4 block whitespace-no-wrap"
+              @click="signOut()"
+              >Keluar</nuxt-link>
           </li>
         </ul>
       </div>

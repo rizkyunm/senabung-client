@@ -1,18 +1,15 @@
 <script setup lang="ts">
 import { ICampaign } from 'types/campaign'
-import { useRuntimeConfig } from '#app'
-// const { session } = await useSession()
 
 const { $api } = useNuxtApp()
 
-// console.log(session.value)
+definePageMeta({ auth: false })
 
 let campaigns = ref<ICampaign[]>([])
-const apiBase = useRuntimeConfig().public.apiBase
 
 onMounted(async () => {
   try {
-    campaigns.value = await $api.campaign.list()
+    campaigns.value = await $api.campaign.highlight()
   } catch (error) {
     console.error(error)
   }
@@ -40,7 +37,7 @@ onMounted(async () => {
         </p>
         <button
           class="block bg-orange-button hover:bg-orange-hover text-white font-semibold px-12 py-3 md:text-xl text-md rounded-full"
-          @click="$router.push({ path: '/' })"
+          @click="$router.push({ path: '/donasi' })"
         >
           Mulai Berdonasi
         </button>
@@ -54,7 +51,7 @@ onMounted(async () => {
           </h2>
         </div>
         <div class="w-auto mt-5">
-          <a class="text-teal-800 hover:underline text-md font-semibold" href=""
+          <a class="text-teal-800 hover:underline text-md font-semibold" href="/donasi"
             >Lihat Semua</a
           >
         </div>
@@ -66,10 +63,10 @@ onMounted(async () => {
           class="card border border-gray-500 rounded-20"
         >
           <figure class="h-56">
-            <img :src="apiBase + '/' + campaign.image_url" alt="" class="" />
+            <img :src="campaign.campaign_image" alt="" class="" />
           </figure>
           <div class="card-body">
-            <h4 class="card-title text-3xl font-medium text-gray-900 mt-5">
+            <h4 class="card-title text-3xl font-medium text-orange-button mt-5">
               {{ campaign.name }}
             </h4>
             <p class="text-md font-light text-gray-900 h-12">
@@ -85,15 +82,20 @@ onMounted(async () => {
                     (campaign.current_amount / campaign.goal_amount) * 100 +
                     '%'
                   "
-                  class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-progress progress-striped"
+                  class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-progress progress-striped"
                 ></div>
               </div>
             </div>
-            <div class="flex progress-info">
+            <div class="flex progress-info text-green-progress font-semibold">
               <div>
-                {{ (campaign.current_amount / campaign.goal_amount) * 100 }}%
+                {{
+                  (
+                    (campaign.current_amount / campaign.goal_amount) *
+                    100
+                  ).toFixed(2)
+                }}%
               </div>
-              <div class="ml-auto font-semibold">
+              <div class="ml-auto">
                 Rp {{ new Intl.NumberFormat().format(campaign.goal_amount) }}
               </div>
             </div>
@@ -101,8 +103,7 @@ onMounted(async () => {
               class="text-center mt-5 button-cta block w-full bg-orange-button hover:bg-orange-hover text-white font-semibold px-6 py-2 text-lg rounded-full"
               @click="
                 $router.push({
-                  name: 'donasi-id',
-                  params: { id: campaign.id },
+                  path: '/donasi/' + campaign.slug,
                 })
               "
             >
