@@ -18,7 +18,7 @@ definePageMeta({
 
 const file = ref(null)
 
-const onFileChange = (e) => {
+const onFileChange = (e: any) => {
   const file = e.target.files[0]
   form.url = URL.createObjectURL(file)
   form.selectedFiles = file
@@ -26,7 +26,7 @@ const onFileChange = (e) => {
 
 const upload = async () => {
   let formData = new FormData()
-  formData.append('avatar', form.selectedFiles)
+  formData.append('avatar', form?.selectedFiles)
 
   try {
     const res = await $api.user.avatar(token.value, formData)
@@ -49,7 +49,7 @@ const showModal = ref(false)
       <div class="w-full lg:w-1/3 px-10 lg:px-0">
         <div class="flex justify-center items-center mx-auto mb-4 w-40">
           <div class="relative">
-            <div class="cursor-pointer" @click="file.click()">
+            <div class="cursor-pointer" @click="file?.click()">
               <img
                 :src="form.url"
                 alt=""

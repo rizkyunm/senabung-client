@@ -75,7 +75,8 @@ onMounted(async () => {
               <p class="text-sm text-gray-600 flex items-center mb-2">
                 Rp.
                 {{ new Intl.NumberFormat().format(transaction.amount) }}
-                &middot; {{ convertTimestamp(transaction.created_at) }} &middot;
+                &middot;
+                {{ convertTimestamp(transaction?.created_at) }} &middot;
                 <span
                   :class="
                     transaction.status === 'paid'

@@ -38,12 +38,12 @@ const { status, data, signOut } = useAuth()
           class="bg-orange-button bg-opacity-80 text-white font-bold py-4 px-6 rounded inline-flex items-center"
         >
           <img
-            v-if="data.image_url"
-            :src="data.image_url"
+            v-if="data?.image_url"
+            :src="data?.image_url"
             alt=""
             class="h-8 rounded-full mr-2"
           />
-          <span class="mr-1">{{ data.name }}</span>
+          <span class="mr-1">{{ data?.name }}</span>
           <svg
             class="fill-current h-4 w-4"
             xmlns="http://www.w3.org/2000/svg"

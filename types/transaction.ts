@@ -23,6 +23,7 @@ export interface ITransaction {
   payment_url: string
   campaign: ICampaignTransaction
   donor: string
+  created_at: string
 }
 
 export interface ICampaignTransaction {

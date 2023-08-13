@@ -124,7 +124,7 @@ const showModal = ref(false)
           <h3 class="font-bold text-lg text-rose-800">Gagal Masuk !</h3>
         </template>
         <template #body>
-          <p class="py-4">{{ errorRespoxxnse }}</p>
+          <p class="py-4">{{ errorResponse }}</p>
         </template>
       </ErrorModal>
     </Teleport>

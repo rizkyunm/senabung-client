@@ -5,11 +5,11 @@ const { $api } = useNuxtApp()
 
 definePageMeta({ auth: false })
 
-let campaigns = ref<ICampaign[]>([])
+let campaigns = reactive<ICampaign[]>([])
 
 onMounted(async () => {
   try {
-    campaigns.value = await $api.campaign.highlight()
+    campaigns = await $api.campaign.highlight()
   } catch (error) {
     console.error(error)
   }

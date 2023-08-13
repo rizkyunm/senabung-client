@@ -57,9 +57,9 @@ const setEditable = (value: boolean) => {
           >
             <div class="flex justify-center items-center mx-auto mb-4 w-40">
               <div class="relative">
-                <div class="cursor-pointer" @click="file.click()">
+                <div class="cursor-pointer" @click="file?.click()">
                   <img
-                    :src="data.image_url"
+                    :src="data?.image_url"
                     alt=""
                     class="rounded-full border-white border-4"
                   />
@@ -90,7 +90,7 @@ const setEditable = (value: boolean) => {
                   <input
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     type="text"
-                    :value="data.email"
+                    :value="data?.email"
                     disabled
                   />
                 </div>
@@ -108,7 +108,7 @@ const setEditable = (value: boolean) => {
                     "
                     class="appearance-none block border w-full rounded py-3 px-4 mb-3 leading-tight"
                     type="text"
-                    :value="data.name"
+                    :value="data?.name"
                     :disabled="!editable"
                   />
                 </div>
@@ -126,7 +126,7 @@ const setEditable = (value: boolean) => {
                     "
                     class="appearance-none block border w-full rounded py-3 px-4 mb-3 leading-tight"
                     type="text"
-                    :value="data.phone_number"
+                    :value="data?.phone_number"
                     :disabled="!editable"
                   />
                 </div>
