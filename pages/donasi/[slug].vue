@@ -109,8 +109,8 @@ onMounted(async () => {
               <div class="w-1/2 inline-block text-right">Tersalurkan</div>
             </div>
             <div class="text-md text-green-button">
-              <div class="w-1/2 inline-block">Rp 20,000,000</div>
-              <div class="w-1/2 inline-block text-right">Rp 10,000,000</div>
+              <div class="w-1/2 inline-block"> Rp {{ new Intl.NumberFormat().format(campaign.current_amount) }} </div>
+              <div class="w-1/2 inline-block text-right">Rp 0</div>
             </div>
             <div class="font-light mt-8 text-md text-gray-400">
               <div class="w-1/2 inline-block">
